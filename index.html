@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HSC Success Handbook | A Guide for NSW Students</title>
+  
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- html-docx.js and FileSaver.js libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-docx-js/0.4.0/html-docx.min.js"></script>
+
+  <style>
+    .section-card {
+      transition: all 0.3s ease;
+      border-left: 4px solid;
+    }
+    .section-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .template-card {
+      background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+    }
+    .printable {
+      border: 1px dashed #cbd5e1;
+    }
+    .progress-bar {
+      transition: width 1s ease-in-out;
+    }
+    [contenteditable="true"]:focus {
+      outline: none;
+      background-color: #f8fafc;
+      border-radius: 4px;
+    }
+    .habit-tracker div:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-12 px-6 shadow-lg">
+    <div class="container mx-auto text-center">
+      <h1 class="text-4xl font-bold mb-4">HSC Success Handbook</h1>
+      <p class="text-xl mb-6">Your Complete Guide to Thriving in Year 11 & 12</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Time Management</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Study Skills</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Wellbeing</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Goal Setting</span>
+        <span class="px-3 py-1 bg-white/20 rounded-full text-sm">HSC Preparation</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- Introduction Section -->
+    <section class="mb-16 bg-white p-8 rounded-xl shadow-md">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-2/3">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome to Your HSC Journey</h2>
+          <p class="text-gray-600 mb-4">
+            This handbook is designed to help you navigate Years 11 and 12 with confidence. 
+            Inside you'll find practical templates, evidence-based strategies, and wellbeing advice tailored for NSW HSC students.
+          </p>
+          <p class="text-gray-600">
+            All templates are interactive — click to edit, print, or save digitally. Once you download a word document, reformate the contents to suit your own personal style and/or preference.
+            Remember to revisit sections as your needs change throughout the year.
+          </p>
+        </div>
+
+        <div class="md:w-1/3 bg-blue-50 p-6 rounded-lg border border-blue-100">
+          <h3 class="font-semibold text-lg mb-3 text-blue-800">Quick Start Guide</h3>
+          <ol class="list-decimal pl-5 space-y-2 text-sm text-gray-700">
+            <li>Complete your <strong>Yearly Goals</strong> first</li>
+            <li>Set up your <strong>Term Planner</strong></li>
+            <li>Create your first <strong>Weekly Schedule</strong></li>
+            <li>Bookmark the <strong>Study Techniques</strong> section</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Goal Setting Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-blue-100 pb-2">Goal Setting Roadmap</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+ <!-- Long-term Goals -->
+        <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-blue-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fas fa-bullseye text-blue-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Post-HSC Vision</h3>
+          </div>
+          <div class="printable p-4 min-h-[200px] bg-gray-50 rounded" contenteditable="true">
+            <p class="text-gray-500 italic">Where do you see yourself after HSC?</p>
+            <p class="text-gray-500 italic">What courses/careers interest you?</p>
+            <p class="text-gray-500 italic">What personal growth do you want?</p>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <button onclick="printSection(this)" class="text-sm text-blue-600 hover:text-blue-800 flex items-center">
+              <i class="fas fa-print mr-1"></i> Print
+            </button>
+            <button onclick="downloadSection(this)" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+              <i class="fas fa-file-download mr-1"></i> Download
+            </button>
+          </div>
+        </div>
+
+        <!-- Yearly Goals -->
+        <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-purple-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-purple-100 p-3 rounded-full mr-4">
+              <i class="fas fa-calendar-star text-purple-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Yearly Goals</h3>
+          </div>
+          <div class="printable p-4 min-h-[200px] bg-gray-50 rounded" contenteditable="true">
+            <p><strong>Academic:</strong> <span class="text-gray-500 italic">(e.g. ATAR goal, subject targets)</span></p>
+            <p><strong>Wellbeing:</strong> <span class="text-gray-500 italic">(health, balance, stress management)</span></p>
+            <p><strong>Personal:</strong> <span class="text-gray-500 italic">(hobbies, relationships, growth)</span></p>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <button onclick="printSection(this)" class="text-sm text-blue-600 hover:text-blue-800 flex items-center">
+              <i class="fas fa-print mr-1"></i> Print
+            </button>
+            <button onclick="downloadSection(this)" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+              <i class="fas fa-file-download mr-1"></i> Download
+            </button>
+          </div>
+        </div>
+        <!-- Term Goals -->
+        <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-green-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-green-100 p-3 rounded-full mr-4">
+              <i class="fas fa-calendar-week text-green-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Term Goals</h3>
+          </div>
+          <div class="printable p-4 min-h-[200px] bg-gray-50 rounded" contenteditable="true">
+            <p><strong>Term 1:</strong> <span class="text-gray-500 italic">(establish routines, initial assessments)</span></p>
+            <p><strong>Term 2:</strong> <span class="text-gray-500 italic">(mid-course adjustments, trial prep)</span></p>
+            <p><strong>Term 3:</strong> <span class="text-gray-500 italic">(HSC trial exams, final revisions)</span></p>
+            <p><strong>Term 4:</strong> <span class="text-gray-500 italic">(HSC exams, post-school plans)</span></p>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <button onclick="printSection(this)" class="text-sm text-blue-600 hover:text-blue-800 flex items-center">
+              <i class="fas fa-print mr-1"></i> Print
+            </button>
+            <button onclick="downloadSection(this)" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+              <i class="fas fa-file-download mr-1"></i> Download
+            </button>
+          </div>
+        </div>
+
+        <!-- Weekly Targets -->
+        <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-yellow-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-yellow-100 p-3 rounded-full mr-4">
+              <i class="fas fa-calendar-day text-yellow-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Weekly Targets</h3>
+          </div>
+          <div class="printable p-4 min-h-[200px] bg-gray-50 rounded" contenteditable="true">
+            <p><strong>This Week's Focus:</strong></p>
+            <p class="text-gray-500 italic">- Key assignments/tests</p>
+            <p class="text-gray-500 italic">- Study priorities</p>
+            <p class="text-gray-500 italic">- Wellbeing activities</p>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <button onclick="printSection(this)" class="text-sm text-blue-600 hover:text-blue-800 flex items-center">
+              <i class="fas fa-print mr-1"></i> Print
+            </button>
+            <button onclick="downloadSection(this)" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+              <i class="fas fa-file-download mr-1"></i> Download
+            </button>
+          </div>
+        </div>
+      </div> <!-- End of Grid from Goal Setting Roadmap -->
+
+      <!-- SMART Goal Tips Box -->
+      <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+        <h3 class="font-semibold text-lg mb-3 text-blue-800">SMART Goal Tips</h3>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+          <div class="bg-white p-3 rounded shadow-sm">
+            <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span class="font-bold text-blue-800">S</span>
+            </div>
+            <p class="text-sm font-medium">Specific</p>
+          </div>
+          <div class="bg-white p-3 rounded shadow-sm">
+            <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span class="font-bold text-blue-800">M</span>
+            </div>
+            <p class="text-sm font-medium">Measurable</p>
+          </div>
+          <div class="bg-white p-3 rounded shadow-sm">
+            <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span class="font-bold text-blue-800">A</span>
+            </div>
+            <p class="text-sm font-medium">Achievable</p>
+          </div>
+          <div class="bg-white p-3 rounded shadow-sm">
+            <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span class="font-bold text-blue-800">R</span>
+            </div>
+            <p class="text-sm font-medium">Relevant</p>
+          </div>
+          <div class="bg-white p-3 rounded shadow-sm">
+            <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
+              <span class="font-bold text-blue-800">T</span>
+            </div>
+            <p class="text-sm font-medium">Time-bound</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-gray-700">Example: "Improve my Chemistry mark from 75% to 85% by Term 3 through completing 2 additional practice papers per week and attending fortnightly study group."</p>
+      </div>
+
+    </section> <!-- End of Goal Setting Section -->
+
+    <!-- Time Management Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-blue-100 pb-2">Time Management System</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+        <!-- Term Planner -->
+        <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-indigo-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+              <i class="fas fa-calendar-alt text-indigo-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Term Planner</h3>
+          </div>
+          <div class="printable p-4 bg-gray-50 rounded">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b">
+                  <th class="text-left pb-2">Week</th>
+                  <th class="text-left pb-2">Key Dates</th>
+                  <th class="text-left pb-2">Study Focus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2" contenteditable="true">1</td>
+                  <td class="py-2" contenteditable="true"></td>
+                  <td class="py-2" contenteditable="true"></td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2" contenteditable="true">2</td>
+                  <td class="py-2" contenteditable="true"></td>
+                  <td class="py-2" contenteditable="true"></td>
+                </tr>
+                <!-- Additional weeks can be added -->
+              </tbody>
+            </table>
+            <button onclick="addTableRow(this)" class="mt-3 text-xs text-indigo-600 hover:text-indigo-800">
+              <i class="fas fa-plus mr-1"></i> Add Week
+            </button>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <button onclick="printSection(this)" class="text-sm text-blue-600 hover:text-blue-800 flex items-center">
+              <i class="fas fa-print mr-1"></i> Print
+            </button>
+            <button onclick="downloadSection(this)" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+              <i class="fas fa-file-download mr-1"></i> Download
+            </button>
+          </div>
+        </div>
+
+        <!-- Weekly Schedule -->
+        <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-pink-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-pink-100 p-3 rounded-full mr-4">
+              <i class="fas fa-calendar-week text-pink-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Weekly Schedule</h3>
+          </div>
+          <div class="printable p-4 bg-gray-50 rounded">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b">
+                  <th class="text-left pb-2 w-1/6">Time</th>
+                  <th class="text-left pb-2">Monday</th>
+                  <th class="text-left pb-2">Tuesday</th>
+                  <!-- Additional days -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2" contenteditable="true">7-8am</td>
+                  <td class="py-2" contenteditable="true"></td>
+                  <td class="py-2" contenteditable="true"></td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2" contenteditable="true">4-5pm</td>
+                  <td class="py-2" contenteditable="true"></td>
+                  <td class="py-2" contenteditable="true"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="flex justify-between mt-3">
+              <button onclick="addTimeRow(this)" class="text-xs text-pink-600 hover:text-pink-800">
+                <i class="fas fa-plus mr-1"></i> Add Time
+              </button>
+              <button onclick="addDayColumn(this)" class="text-xs text-pink-600 hover:text-pink-800">
+                <i class="fas fa-plus mr-1"></i> Add Day
+              </button>
+            </div>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <button onclick="printSection(this)" class="text-sm text-blue-600 hover:text-blue-800 flex items-center">
+              <i class="fas fa-print mr-1"></i> Print
+            </button>
+            <button onclick="downloadSection(this)" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+              <i class="fas fa-file-download mr-1"></i> Download
+            </button>
+          </div>
+        </div>
+        <!-- Daily Priority Matrix -->
+        <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-red-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-red-100 p-3 rounded-full mr-4">
+              <i class="fas fa-tasks text-red-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Priority Matrix</h3>
+          </div>
+          <div class="printable p-4 bg-gray-50 rounded">
+            <table class="w-full border-collapse">
+              <tr>
+                <td class="border p-2 text-center font-medium bg-red-50">Urgent</td>
+                <td class="border p-2 text-center font-medium bg-red-50">Not Urgent</td>
+              </tr>
+              <tr>
+                <td class="border p-2 h-24 bg-red-100" contenteditable="true">
+                  <p class="text-xs text-gray-600">Important & Urgent</p>
+                  <p class="text-xs text-gray-600">(Do now)</p>
+                </td>
+                <td class="border p-2 h-24 bg-yellow-100" contenteditable="true">
+                  <p class="text-xs text-gray-600">Important but Not Urgent</p>
+                  <p class="text-xs text-gray-600">(Schedule)</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="border p-2 h-24 bg-blue-100" contenteditable="true">
+                  <p class="text-xs text-gray-600">Urgent but Not Important</p>
+                  <p class="text-xs text-gray-600">(Delegate if possible)</p>
+                </td>
+                <td class="border p-2 h-24 bg-green-100" contenteditable="true">
+                  <p class="text-xs text-gray-600">Neither Urgent nor Important</p>
+                  <p class="text-xs text-gray-600">(Eliminate)</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <button onclick="printSection(this)" class="text-sm text-blue-600 hover:text-blue-800 flex items-center">
+              <i class="fas fa-print mr-1"></i> Print
+            </button>
+            <button onclick="downloadSection(this)" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+              <i class="fas fa-file-download mr-1"></i> Download
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Time Management Tips -->
+      <div class="bg-blue-50 p-6 rounded-lg border border-blue-200 mt-10">
+        <h3 class="font-semibold text-lg mb-3 text-blue-800">Time Management Tips</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-white p-4 rounded shadow-sm">
+            <div class="flex items-center mb-2">
+              <div class="bg-blue-100 p-2 rounded-full mr-3">
+                <i class="fas fa-clock text-blue-600 text-sm"></i>
+              </div>
+              <h4 class="font-medium">Pomodoro Technique</h4>
+            </div>
+            <p class="text-sm text-gray-700">Study for 25 mins, then take a 5 min break. After 4 cycles, take a longer break.</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow-sm">
+            <div class="flex items-center mb-2">
+              <div class="bg-blue-100 p-2 rounded-full mr-3">
+                <i class="fas fa-calendar-check text-blue-600 text-sm"></i>
+              </div>
+              <h4 class="font-medium">Time Blocking</h4>
+            </div>
+            <p class="text-sm text-gray-700">Assign specific times for each task in your planner or calendar.</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow-sm">
+            <div class="flex items-center mb-2">
+              <div class="bg-blue-100 p-2 rounded-full mr-3">
+                <i class="fas fa-bolt text-blue-600 text-sm"></i>
+              </div>
+              <h4 class="font-medium">Energy Matching</h4>
+            </div>
+            <p class="text-sm text-gray-700">Do harder tasks during your peak energy times (morning/evening).</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow-sm">
+            <div class="flex items-center mb-2">
+              <div class="bg-blue-100 p-2 rounded-full mr-3">
+                <i class="fas fa-undo text-blue-600 text-sm"></i>
+              </div>
+              <h4 class="font-medium">Buffer Time</h4>
+            </div>
+            <p class="text-sm text-gray-700">Allow 15-30 min gaps between major tasks for unexpected issues.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Study Techniques Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-blue-100 pb-2">Effective Study Techniques</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+        <!-- Note Taking Methods -->
+        <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-teal-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-teal-100 p-3 rounded-full mr-4">
+              <i class="fas fa-pen-fancy text-teal-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Note Taking Methods</h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="p-4 bg-gray-50 rounded border border-gray-200">
+              <h4 class="font-medium mb-2 text-teal-800">Cornell Method</h4>
+              <div class="flex">
+                <div class="border-r border-gray-300 pr-4 mr-4">
+                  <p class="text-xs text-gray-600">Cues Column</p>
+                  <div class="h-16 w-20 border" contenteditable="true"></div>
+                </div>
+                <div class="flex-1">
+                  <p class="text-xs text-gray-600">Notes Area</p>
+                  <div class="h-16 border" contenteditable="true"></div>
+                </div>
+              </div>
+              <p class="text-xs mt-2 text-gray-600">Summary at the bottom</p>
+            </div>
+
+            <div class="p-4 bg-gray-50 rounded border border-gray-200">
+              <h4 class="font-medium mb-2 text-teal-800">Mind Mapping</h4>
+              <div class="flex justify-center">
+                <div class="relative">
+                  <div class="h-24 w-24 rounded-full border-2 border-teal-300 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" contenteditable="true"></div>
+                  <div class="h-16 w-16 rounded-full border-2 border-teal-200 absolute top-1/4 left-1/4" contenteditable="true"></div>
+                  <div class="h-16 w-16 rounded-full border-2 border-teal-200 absolute top-1/4 right-1/4" contenteditable="true"></div>
+                  <div class="h-16 w-16 rounded-full border-2 border-teal-200 absolute bottom-1/4 left-1/4" contenteditable="true"></div>
+                  <div class="h-16 w-16 rounded-full border-2 border-teal-200 absolute bottom-1/4 right-1/4" contenteditable="true"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Recall and Spaced Repetition -->
+        <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-orange-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-orange-100 p-3 rounded-full mr-4">
+              <i class="fas fa-brain text-orange-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Active Learning</h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="p-4 bg-gray-50 rounded border border-gray-200">
+              <h4 class="font-medium mb-2 text-orange-800">Flashcard System</h4>
+              <div class="flex justify-between mb-2">
+                <div class="w-32 h-20 border-2 border-orange-300 rounded p-2" contenteditable="true">
+                  <p class="text-xs text-gray-600">Question</p>
+                </div>
+                <div class="w-32 h-20 border-2 border-orange-300 rounded p-2" contenteditable="true">
+                  <p class="text-xs text-gray-600">Answer</p>
+                </div>
+              </div>
+              <div class="flex text-xs text-gray-600 space-x-4">
+                <div>
+                  <p>Difficulty:</p>
+                  <div class="flex space-x-1 mt-1">
+                    <span class="w-4 h-4 rounded-full bg-orange-200"></span>
+                    <span class="w-4 h-4 rounded-full bg-orange-200"></span>
+                    <span class="w-4 h-4 rounded-full bg-orange-200"></span>
+                  </div>
+                </div>
+                <div>
+                  <p>Next Review:</p>
+                  <p class="mt-1" contenteditable="true">3 days</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 bg-gray-50 rounded border border-gray-200">
+              <h4 class="font-medium mb-2 text-orange-800">Practice Testing Schedule</h4>
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b">
+                    <th class="text-left pb-1">Topic</th>
+                    <th class="text-left pb-1">Test Date</th>
+                    <th class="text-left pb-1">Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-1" contenteditable="true">Chemistry Mod 1</td>
+                    <td class="py-1" contenteditable="true">15/03</td>
+                    <td class="py-1" contenteditable="true">78%</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1" contenteditable="true">Maths Calculus</td>
+                    <td class="py-1" contenteditable="true">22/03</td>
+                    <td class="py-1" contenteditable="true"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <button onclick="addTestRow(this)" class="mt-2 text-xs text-orange-600 hover:text-orange-800">
+                <i class="fas fa-plus mr-1"></i> Add Test
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Wellbeing Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-blue-100 pb-2">Wellbeing & Self-Care</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <!-- Sleep Tracker -->
+        <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-amber-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-amber-100 p-3 rounded-full mr-4">
+              <i class="fas fa-moon text-amber-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Sleep Tracker</h3>
+          </div>
+          <div class="printable p-4 bg-gray-50 rounded">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b">
+                  <th class="text-left pb-2">Day</th>
+                  <th class="text-left pb-2">Bed Time</th>
+                  <th class="text-left pb-2">Wake Time</th>
+                  <th class="text-left pb-2">Quality</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2">Mon</td>
+                  <td class="py-2" contenteditable="true">10:30pm</td>
+                  <td class="py-2" contenteditable="true">6:30am</td>
+                  <td class="py-2">
+                    <select class="text-xs border rounded p-1">
+                      <option>😊</option>
+                      <option>😐</option>
+                      <option>😞</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button onclick="addSleepDay(this)" class="mt-3 text-xs text-amber-600 hover:text-amber-800">
+              <i class="fas fa-plus mr-1"></i> Add Day
+            </button>
+          </div>
+          <div class="mt-4">
+            <h4 class="font-medium mb-2">Sleep Tips</h4>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li class="flex items-start"><span class="text-amber-500 mr-2">•</span>Aim for 8-10 hours nightly</li>
+              <li class="flex items-start"><span class="text-amber-500 mr-2">•</span>Avoid screens 1 hour before bed</li>
+              <li class="flex items-start"><span class="text-amber-500 mr-2">•</span>Keep consistent sleep schedule</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Nutrition Planner -->
+        <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-emerald-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-emerald-100 p-3 rounded-full mr-4">
+              <i class="fas fa-apple-alt text-emerald-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Nutrition Planner</h3>
+          </div>
+          <div class="printable p-4 bg-gray-50 rounded">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b">
+                  <th class="text-left pb-2">Meal</th>
+                  <th class="text-left pb-2">Monday</th>
+                  <th class="text-left pb-2">Tuesday</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2">Breakfast</td>
+                  <td class="py-2" contenteditable="true"></td>
+                  <td class="py-2" contenteditable="true"></td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2">Lunch</td>
+                  <td class="py-2" contenteditable="true"></td>
+                  <td class="py-2" contenteditable="true"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="flex justify-between mt-3">
+              <button onclick="addMealRow(this)" class="text-xs text-emerald-600 hover:text-emerald-800">
+                <i class="fas fa-plus mr-1"></i> Add Meal
+              </button>
+              <button onclick="addNutritionDay(this)" class="text-xs text-emerald-600 hover:text-emerald-800">
+                <i class="fas fa-plus mr-1"></i> Add Day
+              </button>
+            </div>
+          </div>
+          <div class="mt-4">
+            <h4 class="font-medium mb-2">Brain Food Tips</h4>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li class="flex items-start"><span class="text-emerald-500 mr-2">•</span>Stay hydrated (2L water daily)</li>
+              <li class="flex items-start"><span class="text-emerald-500 mr-2">•</span>Include omega-3s (fish, nuts, seeds)</li>
+              <li class="flex items-start"><span class="text-emerald-500 mr-2">•</span>Eat regular, balanced meals</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Habit Tracker -->
+        <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-rose-500">
+          <div class="flex items-center mb-4">
+            <div class="bg-rose-100 p-3 rounded-full mr-4">
+              <i class="fas fa-heartbeat text-rose-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Habit Tracker</h3>
+          </div>
+          <div class="printable p-4 bg-gray-50 rounded">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b">
+                  <th class="text-left pb-2">Habit</th>
+                  <th class="text-center pb-2">Mon</th>
+                  <th class="text-center pb-2">Tue</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2" contenteditable="true">Exercise</td>
+                  <td class="py-2 text-center"><input type="checkbox" class="h-4 w-4 text-rose-500 rounded"></td>
+                  <td class="py-2 text-center"><input type="checkbox" class="h-4 w-4 text-rose-500 rounded"></td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2" contenteditable="true">Study Break</td>
+                  <td class="py-2 text-center"><input type="checkbox" class="h-4 w-4 text-rose-500 rounded"></td>
+                  <td class="py-2 text-center"><input type="checkbox" class="h-4 w-4 text-rose-500 rounded"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="flex justify-between mt-3">
+              <button onclick="addHabitRow(this)" class="text-xs text-rose-600 hover:text-rose-800">
+                <i class="fas fa-plus mr-1"></i> Add Habit
+              </button>
+              <button onclick="addHabitDay(this)" class="text-xs text-rose-600 hover:text-rose-800">
+                <i class="fas fa-plus mr-1"></i> Add Day
+              </button>
+            </div>
+          </div>
+          <div class="mt-4">
+            <h4 class="font-medium mb-2">Wellbeing Tips</h4>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li class="flex items-start"><span class="text-rose-500 mr-2">•</span>Take 5-min breaks every 30–60 mins</li>
+              <li class="flex items-start"><span class="text-rose-500 mr-2">•</span>Get sunlight and fresh air daily</li>
+              <li class="flex items-start"><span class="text-rose-500 mr-2">•</span>Practice mindfulness or deep breathing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Mental Health Support -->
+    <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+      <h3 class="font-semibold text-lg mb-3 text-blue-800">Mental Health Support</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Positive Self-Talk -->
+        <div>
+          <h4 class="font-medium mb-2 text-blue-700">Positive Self-Talk</h4>
+          <div class="bg-white p-4 rounded shadow-sm mb-4">
+            <p class="text-sm text-gray-700 mb-2">Replace negative thoughts with:</p>
+            <ul class="text-sm text-gray-700 space-y-2">
+              <li class="flex">
+                <span class="text-red-500 mr-2">✗</span>
+                <span class="line-through">"I'll never understand this"</span>
+              </li>
+              <li class="flex">
+                <span class="text-green-500 mr-2">✓</span>
+                <span>"I'm making progress each time I study this"</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-4 rounded shadow-sm" contenteditable="true">
+            <p class="text-sm text-gray-600 italic">Write your own positive affirmations here...</p>
+          </div>
+        </div>
+
+        <!-- When to Seek Help -->
+        <div>
+          <h4 class="font-medium mb-2 text-blue-700">When to Seek Help</h4>
+          <div class="bg-white p-4 rounded shadow-sm">
+            <ul class="text-sm text-gray-700 space-y-2">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Persistent low mood or anxiety</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Difficulty sleeping or eating</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Withdrawing from friends or activities</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Feeling overwhelmed for extended periods</span>
+              </li>
+            </ul>
+            <div class="mt-3 p-3 bg-blue-100 rounded">
+              <h5 class="font-medium text-sm mb-1">Support Options:</h5>
+              <p class="text-xs">
+                School Counsellor • Kids Helpline (1800 55 1800) • Headspace • Beyond Blue (1300 22 4636)
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+<!-- Building Confidence Section -->
+<section class="mb-16">
+  <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-blue-100 pb-2">Building Confidence</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Strengths Inventory -->
+    <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-violet-500">
+      <div class="flex items-center mb-4">
+        <div class="bg-violet-100 p-3 rounded-full mr-4">
+          <i class="fas fa-star text-violet-600"></i>
+        </div>
+        <h3 class="text-xl font-semibold">Strengths Inventory</h3>
+      </div>
+      <div class="printable p-4 bg-gray-50 rounded min-h-[200px]" contenteditable="true">
+        <p class="text-gray-600 mb-2"><strong>Academic Strengths:</strong></p>
+        <p class="text-gray-500 italic mb-4">(e.g. writing skills, mathematical ability, research skills)</p>
+
+        <p class="text-gray-600 mb-2"><strong>Personal Strengths:</strong></p>
+        <p class="text-gray-500 italic mb-4">(e.g. persistence, creativity, teamwork)</p>
+
+        <p class="text-gray-600 mb-2"><strong>Recent Achievements:</strong></p>
+        <p class="text-gray-500 italic">(big or small - all progress counts!)</p>
+      </div>
+      <div class="flex gap-2 mt-3">
+        <button onclick="printSection(this)" class="text-sm text-blue-600 hover:text-blue-800 flex items-center">
+          <i class="fas fa-print mr-1"></i> Print
+        </button>
+        <button onclick="downloadSection(this)" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+          <i class="fas fa-file-download mr-1"></i> Download
+        </button>
+      </div>
+    </div>
+
+    <!-- Growth Mindset Tracker -->
+    <div class="section-card bg-white p-6 rounded-lg shadow-sm border-l-sky-500">
+      <div class="flex items-center mb-4">
+        <div class="bg-sky-100 p-3 rounded-full mr-4">
+          <i class="fas fa-seedling text-sky-600"></i>
+        </div>
+        <h3 class="text-xl font-semibold">Growth Mindset Tracker</h3>
+      </div>
+      <div class="space-y-4">
+        
+        <!-- Challenge Reflection -->
+        <div class="p-4 bg-gray-50 rounded border border-gray-200">
+          <h4 class="font-medium mb-2 text-sky-800">Challenge Reflection</h4>
+          <div contenteditable="true" class="text-sm text-gray-700 min-h-[50px]">
+            <p class="text-gray-500 italic">Describe a recent challenge...</p>
+          </div>
+          <div class="mt-2">
+            <p class="text-xs text-gray-600 mb-1">What did you learn?</p>
+            <div contenteditable="true" class="text-sm text-gray-700 min-h-[50px] border-t pt-2"></div>
+          </div>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="p-4 bg-gray-50 rounded border border-gray-200">
+          <h4 class="font-medium mb-2 text-sky-800">Progress Tracker</h4>
+          <div class="flex items-center mb-2">
+            <span class="text-sm mr-2">Subject:</span>
+            <span contenteditable="true" class="text-sm font-medium">English</span>
+          </div>
+          <div class="flex items-center justify-between text-xs text-gray-600 mb-1">
+            <span>Start of Term</span>
+            <span>Now</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-sky-600 h-2.5 rounded-full progress-bar" style="width: 45%"></div>
+          </div>
+          <div class="mt-1 text-right text-xs text-gray-600">
+            <span contenteditable="true">45%</span> improvement
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<!-- Confidence Boosters -->
+<div class="bg-blue-50 p-6 rounded-lg border border-blue-200 mt-8">
+  <h3 class="font-semibold text-lg mb-3 text-blue-800">Confidence Boosters</h3>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    
+    <!-- Power Posing -->
+    <div class="bg-white p-4 rounded shadow-sm">
+      <h4 class="font-medium mb-2 text-blue-700">Power Posing</h4>
+      <p class="text-sm text-gray-700">Before tests or presentations, stand tall for 2 minutes to boost confidence hormones.</p>
+    </div>
+
+    <!-- Success Journal -->
+    <div class="bg-white p-4 rounded shadow-sm">
+      <h4 class="font-medium mb-2 text-blue-700">Success Journal</h4>
+      <p class="text-sm text-gray-700">Keep a daily log of small wins and positive feedback to review when doubting yourself.</p>
+    </div>
+
+    <!-- Visualization -->
+    <div class="bg-white p-4 rounded shadow-sm">
+      <h4 class="font-medium mb-2 text-blue-700">Visualization</h4>
+      <p class="text-sm text-gray-700">Spend 5 minutes daily imagining yourself succeeding in upcoming challenges.</p>
+    </div>
+
+  </div>
+</div>
+<!-- Additional Resources Section -->
+<section class="mb-16">
+  <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-blue-100 pb-2">Additional Resources</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+    <!-- Online Resources -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-4 flex items-center">
+        <div class="bg-indigo-100 p-2 rounded-full mr-4">
+          <i class="fas fa-globe text-indigo-600"></i>
+        </div>
+        <span>Online Resources</span>
+      </h3>
+      <ul class="space-y-3">
+        <li class="flex items-start">
+          <span class="bg-indigo-100 p-1 rounded-full mr-3 mt-1">
+            <i class="fas fa-link text-indigo-600 text-xs"></i>
+          </span>
+          <div>
+            <a href="https://www.nsw.gov.au/education-and-training/nesa/hsc" target="_blank" class="font-medium text-indigo-700 hover:underline">NESA HSC Resources</a>
+            <p class="text-sm text-gray-600">Official syllabus, past papers, and exam guidelines</p>
+          </div>
+        </li>
+        <li class="flex items-start">
+          <span class="bg-indigo-100 p-1 rounded-full mr-3 mt-1">
+            <i class="fas fa-link text-indigo-600 text-xs"></i>
+          </span>
+          <div>
+            <a href="https://studywithme.io" target="_blank" class="font-medium text-indigo-700 hover:underline">StudyWithMe</a>
+            <p class="text-sm text-gray-600">Virtual study rooms with peers</p>
+          </div>
+        </li>
+        <li class="flex items-start">
+          <span class="bg-indigo-100 p-1 rounded-full mr-3 mt-1">
+            <i class="fas fa-link text-indigo-600 text-xs"></i>
+          </span>
+          <div>
+            <a href="https://www.khanacademy.org" target="_blank" class="font-medium text-indigo-700 hover:underline">Khan Academy</a>
+            <p class="text-sm text-gray-600">Free tutorials across subjects</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Recommended Reading -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-4 flex items-center">
+        <div class="bg-amber-100 p-2 rounded-full mr-4">
+          <i class="fas fa-book-open text-amber-600"></i>
+        </div>
+        <span>Recommended Reading</span>
+      </h3>
+      <ul class="space-y-3">
+        <li class="flex items-start">
+          <span class="bg-amber-100 p-1 rounded-full mr-3 mt-1">
+            <i class="fas fa-book text-amber-600 text-xs"></i>
+          </span>
+          <div>
+            <p class="font-medium text-amber-800">"The Art of Learning" by Josh Waitzkin</p>
+            <p class="text-sm text-gray-600">Mastering skills and performance under pressure</p>
+          </div>
+        </li>
+        <li class="flex items-start">
+          <span class="bg-amber-100 p-1 rounded-full mr-3 mt-1">
+            <i class="fas fa-book text-amber-600 text-xs"></i>
+          </span>
+          <div>
+            <p class="font-medium text-amber-800">"Make It Stick" by Peter Brown</p>
+            <p class="text-sm text-gray-600">Science of successful learning</p>
+          </div>
+        </li>
+        <li class="flex items-start">
+          <span class="bg-amber-100 p-1 rounded-full mr-3 mt-1">
+            <i class="fas fa-book text-amber-600 text-xs"></i>
+          </span>
+          <div>
+            <p class="font-medium text-amber-800">"The Stress Less HSC" by Dr Sarah Hughes</p>
+            <p class="text-sm text-gray-600">Australian-specific HSC wellbeing guide</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+<!-- Footer Section -->
+<footer class="bg-gray-800 text-white py-12">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+      <!-- About -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">HSC Success Handbook</h3>
+        <p class="text-gray-400">Your comprehensive guide to thriving in Years 11 and 12.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="https://www.nsw.gov.au/education-and-training/nesa" target="_blank" class="text-gray-400 hover:text-white transition">NESA Website</a></li>
+          <li><a href="https://www.educationcorner.com/study-skills.html" target="_blank" class="text-gray-400 hover:text-white transition">Study Skills Tips</a></li>
+          <li><a href="https://headspace.org.au" target="_blank" class="text-gray-400 hover:text-white transition">Youth Mental Health</a></li>
+        </ul>
+      </div>
+
+      <!-- Support Services -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Support Services</h3>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="https://kidshelpline.com.au" target="_blank" class="hover:text-white transition">Kids Helpline: 1800 55 1800</a></li>
+          <li><a href="https://headspace.org.au" target="_blank" class="hover:text-white transition">Headspace</a></li>
+          <li><a href="https://beyondblue.org.au" target="_blank" class="hover:text-white transition">Beyond Blue: 1300 22 4636</a></li>
+          <li><a href="https://lifeline.org.au" target="_blank" class="hover:text-white transition">Lifeline: 13 11 14</a></li>
+        </ul>
+      </div>
+
+      <!-- Download Handbook -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Print / Download Handbook</h3>
+        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg flex items-center mb-2">
+          <i class="fas fa-print mr-2"></i> Print Handbook
+        </button>
+        <button onclick="downloadEntireHandbook()" class="bg-green-600 hover:bg-green-700 text-white text-sm px-4 py-2 rounded-lg flex items-center mb-2">
+          <i class="fas fa-file-word mr-2"></i> Download Handbook
+        </button>
+        <p class="text-xs text-gray-500 mt-2">For best results, print sections individually.</p>
+      </div>
+
+    </div>
+
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-xs">
+  <p>© 2025 HSC Success Handbook. Designed for NSW Year 11 and 12 students by M Blakeley.</p>
+  <p class="mt-1">Disclaimer: This handbook is for educational purposes only and does not replace professional advice.</p>
+</div>
+</div> <!-- This closes the container from earlier (correct) -->
+
+</footer>
+
+<script>
+// Print specific section
+function printSection(button) {
+  const section = button.closest('.section-card');
+  const printWindow = window.open('', '_blank');
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Print Section</title>
+        <style>
+          body { font-family: sans-serif; padding: 20px; }
+        </style>
+      </head>
+      <body>${section.innerHTML}</body>
+    </html>
+  `);
+  printWindow.document.close();
+  printWindow.focus();
+  printWindow.print();
+  printWindow.close();
+}
+
+// Download specific section
+function downloadSection(button) {
+  const section = button.closest('.section-card');
+  const content = section.querySelector('.printable') ? section.querySelector('.printable').innerHTML : section.innerHTML;
+  
+  const blob = new Blob([`
+    <!DOCTYPE html>
+    <html>
+      <head><meta charset="UTF-8"></head>
+      <body>${content}</body>
+    </html>
+  `], { type: 'application/msword' });
+
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'section.doc';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// Download entire handbook
+function downloadEntireHandbook() {
+  const mainContent = document.querySelector('main');
+  const html = `
+    <!DOCTYPE html>
+    <html>
+      <head><meta charset="UTF-8"></head>
+      <body>${mainContent.innerHTML}</body>
+    </html>
+  `;
+  
+  const blob = new Blob([html], { type: 'application/msword' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'HSC_Success_Handbook.doc';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+</script>
+
