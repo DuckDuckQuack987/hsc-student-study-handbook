@@ -455,9 +455,9 @@
 
         <div class="p-4 bg-gray-50 rounded border border-gray-200">
           <h4 class="font-medium mb-2 text-teal-800">Mind Mapping</h4>
-          <div class="flex justify-center mt-4">
-           <img src="mindmap-image.png" alt="Mind Map Example" class="w-full max-w-md rounded shadow-md">
-</div>
+          <div class="flex justify-center md:justify-start">
+  <div class="relative ml-4 md:ml-6 lg:ml-10 w-[280px] h-[280px] sm:w-[320px] sm:h-[320px]">
+              <div class="h-24 w-24 rounded-full border-2 border-teal-300 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" contenteditable="true"></div>
               <div class="h-16 w-16 rounded-full border-2 border-teal-200 absolute top-1/4 left-1/4" contenteditable="true"></div>
               <div class="h-16 w-16 rounded-full border-2 border-teal-200 absolute top-1/4 right-1/4" contenteditable="true"></div>
               <div class="h-16 w-16 rounded-full border-2 border-teal-200 absolute bottom-1/4 left-1/4" contenteditable="true"></div>
@@ -479,12 +479,15 @@
     </div>
     <h3 class="text-xl font-semibold">Active Learning</h3>
   </div>
+  
+  <a href="https://students.unimelb.edu.au/academic-skills/resources/study-skills/learning-strategies/active-learning" target="_blank" class="inline-block mb-4 px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 text-sm shadow">
+    More Active Learning Strategies
+  </a>
 
   <div class="space-y-4">
-    <!-- Flashcard System -->
     <div class="p-4 bg-gray-50 rounded border border-gray-200">
       <h4 class="font-medium mb-2 text-orange-800">Flashcard System</h4>
-      <div class="flex justify-between mb-2 flex-wrap gap-2">
+      <div class="flex justify-between mb-2">
         <div class="w-32 h-20 border-2 border-orange-300 rounded p-2" contenteditable="true">
           <p class="text-xs text-gray-600">Question</p>
         </div>
@@ -508,7 +511,6 @@
       </div>
     </div>
 
-    <!-- Practice Testing -->
     <div class="p-4 bg-gray-50 rounded border border-gray-200">
       <h4 class="font-medium mb-2 text-orange-800">Practice Testing Schedule</h4>
       <table class="w-full text-sm">
@@ -535,14 +537,6 @@
       <button onclick="addTestRow(this)" class="mt-2 text-xs text-orange-600 hover:text-orange-800">
         <i class="fas fa-plus mr-1"></i> Add Test
       </button>
-    </div>
-
-    <!-- Button below Practice Testing -->
-    <div class="text-center">
-      <a href="https://students.unimelb.edu.au/academic-skills/resources/study-skills/learning-strategies/active-learning" target="_blank"
-        class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium py-2 px-4 rounded shadow mt-3 inline-block">
-        More Active Learning Strategies
-      </a>
     </div>
   </div>
 </div>
